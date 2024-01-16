@@ -11,8 +11,10 @@ class StoreAPIView(ListModelMixin, GenericViewSet):
 
 
 class ProductAPIView(ListModelMixin, GenericViewSet):
+    queryset = Product.objects.prefetch_related(
+        'stores').prefetch_related('images').all()
     serializer_class = ProductSerializer
 
     def get_queryset(self):
         product_name = self.request.query_params.get("product_name")
-        return Product.objects.filter(title=product_name)
+        return Product.objects.prefetch_related('stores').prefetch_related('images').filter(title=product_name)
