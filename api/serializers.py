@@ -10,10 +10,11 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     images = ProductImageSerializer(many=True)
+    stores = serializers.StringRelatedField()
 
     class Meta:
         model = Product
-        fields = ['id', 'title', 'description', 'price', 'images']
+        fields = ['id', 'title', 'description', 'price', 'images', 'stores']
 
 
 class StoreSerializer(serializers.ModelSerializer):
