@@ -11,7 +11,6 @@ class StoreAPIView(ListModelMixin, GenericViewSet):
 
 
 class ProductAPIView(ListModelMixin, GenericViewSet):
-    queryset = Product.objects.all()
     serializer_class = ProductSerializer
 
     def get_queryset(self):
