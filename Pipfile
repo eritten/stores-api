@@ -8,8 +8,12 @@ django = "*"
 djangorestframework = "*"
 dj-database-url = "*"
 pillow = "*"
+locust = "*"
 
 [dev-packages]
+locust = "*"
+pytest = "*"
+django-pytest = "*"
 
 [requires]
 python_version = "3.10"

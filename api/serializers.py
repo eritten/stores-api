@@ -10,7 +10,7 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     images = ProductImageSerializer(many=True)
-    stores = serializers.StringRelatedField()
+    stores = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Product
